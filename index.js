@@ -3,6 +3,22 @@ const express = require('express');
 const app = express();
 const port = 4000;
 
+const college_data = {
+    "name": "TIT",
+    "location": "Mumbai",
+    "established": 1958,
+    "courses": ["B.Tech", "M.Tech", "PhD"],
+    "departments": ["CSE", "ME", "EE", "CE", "Mathematics"],
+    "hostels": 18,
+    "students": 10000
+};
+
+app.get('/college', (req, res) => {
+    res.json(college_data);
+}
+);
+
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
     }

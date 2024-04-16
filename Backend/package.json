@@ -1,19 +1,15 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "\"# BackEnd\" \r \"# BackEnd\"",
+  "description": "",
+  "main": "server.js",
   "type": "module",
-  "main": "index.js",
-
   "scripts": {
-    "dev": "nodemon index.js"
+    "start":"node server.js"
   },
   "author": "Pankaj",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "env": "^0.0.2",
     "express": "^4.19.2"
   }
 }
