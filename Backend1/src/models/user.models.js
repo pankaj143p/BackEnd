@@ -70,14 +70,14 @@ userSchema.methods.generateToken = function(){
         _id : this._id,
         username : this.username,
         email : this.email,
-        fullnam : this.fullname
+        fullname : this.fullname
     },
     process.env.ACCESS_TOKEN_SECRET,
     {
         expiresIn : process.env.ACCESS_TOKEN_EXPIRY
     
-    },
-     )
+      },
+    )
 }
 
 userSchema.methods.generateToken = function(){
