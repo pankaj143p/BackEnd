@@ -1,10 +1,10 @@
 
-export {asyncHandler}
 //for propmise
 const asyncHandler  = (rquestHandler) => {
-    async (req, res, next) => {
+   return (req, res, next) => {
   Promise.resolve(rquestHandler(req, res, next)).catch(next);
   ((err)=> next(err))
+
 }
 }
 
