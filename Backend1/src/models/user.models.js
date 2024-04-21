@@ -27,9 +27,9 @@ const userSchema = new Schema({
         trim : true,
         index : true
     },
-    avtar : {
+    avatar : {
         type : String ,
-        required : true,
+        // required : true,
     },
     coverImage : {
         type : String,
@@ -94,4 +94,4 @@ userSchema.methods.generateToken = function(){
      )
 }
 
-const User = mongoose.model('User',userSchema)
+export const User = mongoose.model('User',userSchema)
