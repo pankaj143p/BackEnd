@@ -136,8 +136,25 @@ const registerUser = asyncHandler(async (req, res, next) => {
 
     // Fetch the created user excluding password and refreshToken fields
     const createdUser = await User.findById(user._id).select("-password -refreshToken");
+      
 
+    // check for user is already exist 
+    const existUser = await User.findOne({email});
+    if(!existUser){
+        throw new ApiError(409,"User already exists")
+    }
+  
+    // Return jwt token containing  
+    // user id and email
+    const token = user.generateToken();
+    // Set token in cookie
+    res.cookie("token", token, {
+        httpOnly: true,
+        sameSite: "strict",
+        maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+    });
     // Return success response with created user
+
     return res.status(201).json({
         message: "User created successfully",
         user: createdUser,
