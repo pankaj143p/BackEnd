@@ -27,6 +27,12 @@ const userSchema = new Schema({
         trim : true,
         index : true
     },
+    college : {
+        type : String,
+        required : true,
+        trim : true,
+        index : true
+    },
     avatar : {
         type : String ,
         // required : true,
